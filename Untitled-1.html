@@ -1,0 +1,94 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Aplic. Web de jQuery Mobile</title>
+<link href="jquery.mobile-1.0.min.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery.mobile-1.0.min.js" type="text/javascript"></script>
+<script languaje="javascript">
+var peso;
+var estatura;
+var imc;
+function indice(){
+	peso=document.getElementById("txtpeso").value;
+	peso=parseFloat(document.getElementById("txtpeso").value);
+	estatura=document.getElementById("txtestatura").value;
+	estatura=parseFloat(document.getElementById("txtestatura").value);
+	imc=peso/(estatura*estatura);
+	document.getElementById("txtresul").value=imc;
+	if(imc<18.00){
+		alert("peso bajo");}
+		else if (imc>=18.00 && imc<=24.9){
+		alert("peso normal");	
+		}
+		else if (imc>=25.00 && imc<=26.9){
+		alert("sobrepeso");	
+		}
+		else if (imc>=27.00 && imc<28){
+		alert("obesidad");	
+		}
+		else if (imc>28 && imc<=29){
+		alert("obesidad grado 1");	
+		}
+		else if (imc>=30.00 && imc<=39.9){
+		alert("obesidad grado 2");	
+		}
+		else if (imc>40.00){
+		alert("obesidad grado 3");	
+		}
+		
+			
+			
+	
+}
+
+</script>
+
+
+
+
+</head> 
+<body> 
+
+<div data-role="page" id="page">
+	<div data-role="header">
+		<h1>Indice de Masa Corporal</h1>
+        
+	
+	</div>
+	<table border="0">
+  <tr>
+  <td>
+ <label for="textinput">Introduce tu peso en kg.</label></td>
+<td><input type="text" name="txtpeso" id="txtpeso" value=""  />
+  </td>
+  </tr>
+  <tr>
+  <td> <label for="textinput">Introduce estatura en mtrs</label></td>
+<td><input type="text" name="txtestatura" id="txtestatura" value=""  /></td>
+  </tr>
+  <tr>
+    <td><button onClick="indice()">calcular IMC</button></td>
+    <td><input type="text" name="txtresul" id="txtresul" value=""  /></td>
+  </tr>
+</table>
+	
+	 <div data-role="footer">
+		<h4> say</h4>
+	</div>
+	  
+  
+
+	
+
+
+
+	</div>
+	<div data-role="footer">
+		<h4>Pie de página</h4>
+	</div>
+</div>
+
+</body>
+</html>
